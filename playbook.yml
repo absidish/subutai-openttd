@@ -1,0 +1,29 @@
+---
+
+- hosts: openttd
+  remote_user: root
+  tasks:
+    - name: Download openttd game 
+      get_url:
+        url: https://binaries.openttd.org/releases/1.8.0/openttd-1.8.0-linux-debian-jessie-amd64.deb
+        dest: /tmp/openttd.deb
+        checksum: sha256:2328dbe9c806fe17f5db66a4782c92aed2c65ee869ceee800c620cdaee358bbb
+        mode: 0755
+    - name: Installing openttd
+      apt: deb="/tmp/openttd.deb"
+    - name: Download openmsx
+      get_url:
+        url: http://bundles.openttdcoop.org/openmsx/releases/LATEST/openmsx-0.3.1.zip
+        dest: /tmp/openmsx.zip
+        mode: 0755
+    - name: Download opengfx
+      get_url:
+        url: http://bundles.openttdcoop.org/opengfx/releases/LATEST/opengfx-0.5.4.zip
+        dest: /tmp/opengfx.zip
+        mode: 0755
+    - name: Download opensfx
+      get_url:
+        url: http://bundles.openttdcoop.org/opensfx/releases/opensfx-0.2.3.zip
+        dest: /tmp/opensfx.zip
+        mode: 0755
+      

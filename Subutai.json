@@ -1,0 +1,72 @@
+{
+    "name": "${environmentName}",
+    "description": "OpenTTD Game Server",
+    "version": "1.0.0",
+    "author": "https://github.com/crioto",
+    "containers": [
+        {
+            "hostname": "${webContainerName}",
+            "template": "debian-stretch",
+            "peer-criteria": "HTTP-GROUP",
+            "size": "${containerSize}",
+            "port-mapping": [
+                {
+                    "protocol": "tcp",
+                    "domain": "${domainName}",
+                    "internal-port": "3979",
+                    "external-port": "3979"
+                },
+                {
+                    "protocol": "udp",
+                    "domain": "${domainName}",
+                    "internal-port": "3979",
+                    "external-port": "3979"
+                }
+            ]
+        }
+    ],
+    "peer-criteria": [
+        {
+            "name": "HTTP-GROUP"
+        }
+    ],
+    "ansible-configuration": {
+        "source-url": "https://github.com/crioto/subutai-openttd/archive/master.zip",
+        "ansible-playbook": "playbook.yml",
+        "extra-vars": [],
+        "groups": [
+            {
+                "name": "openttd",
+                "hostnames": [
+                    "${webContainerName}"
+                ]
+            }
+        ]
+    },
+    "user-variables": {
+        "environmentName": {
+            "description": "Enter the environment name",
+            "type": "string",
+            "default": "wp",
+            "validation": "[a-zA-Z0-9]+"
+        },
+        "domainName": {
+            "description": "Enter the application domain name",
+            "type": "domain",
+            "default": "change.the.domain",
+            "validation": "[a-zA-Z0-9]+"
+        },
+        "webContainerName": {
+            "description": "Enter the container's hostname",
+            "type": "string",
+            "default": "wp",
+            "validation": "[a-zA-Z0-9]+"
+        },
+        "containerSize": {
+            "description": "Container Size",
+            "type": "enum",
+            "default": "TINY",
+            "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+        }
+    }
+}
