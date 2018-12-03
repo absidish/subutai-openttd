@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenTTD Game Server
+
+[Service]
+Type=simple
+ExecStart=/opt/openttd/openttd-1.8.0-linux-generic-amd64/openttd -D
+WorkingDirectory=/opt/openttd/openttd-1.8.0-linux-generic-amd64
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=openttd.service

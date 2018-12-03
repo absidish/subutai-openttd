@@ -44,11 +44,23 @@
     - name: Extract opengfx
       unarchive:
         src: /tmp/opengfx.zip
-        dest: /opt/openttd/openttd-1.8.0-linux-generic-amd/dataset
+        dest: /opt/openttd/openttd-1.8.0-linux-generic-amd64/dataset
         remote_src: yes
     - name: Download opensfx
       get_url:
         url: http://bundles.openttdcoop.org/opensfx/releases/opensfx-0.2.3.zip
         dest: /tmp/opensfx.zip
         mode: 0755
+    - name: Copy systemd unit
+      template:
+        src: files/openttd.service
+        dest: /lib/systemd/system
+    - name: Reload systemd
+      systemd: daemon_reload=yes
+    - name: Enable and start service
+      systemd:
+        name: openttd
+        state: started
+        enabled: true
+        masked: no
       
