@@ -67,6 +67,42 @@
             "type": "enum",
             "default": "TINY",
             "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+        },
+        "gameServerName": {
+            "description": "Name of the game server",
+            "type": "string",
+            "default": "myserver",
+            "validation": "[a-zA-Z0-9]+"
+        },
+        "advertise": {
+            "description": "Advertise Game Server?",
+            "type": "enum",
+            "default": "false",
+            "validation": "true,false"
+        },
+        "gameServerPassword": {
+            "description": "Server password",
+            "type": "string",
+            "default": "myserver",
+            "validation": "[a-zA-Z0-9]+"
+        },
+        "pauseOnJoin": {
+            "description": "Pause game on player join?",
+            "type": "enum",
+            "default": "false",
+            "validation": "true,false"
+        },
+        "mapSizeX": {
+            "description": "Map Size X (2 ^ x = number of tiles)",
+            "type": "string",
+            "default": "10",
+            "validation": "[0-9]+"
+        },
+        "mapSizeY": {
+            "description": "Map Size Y (2 ^ y = number of tiles)",
+            "type": "string",
+            "default": "10",
+            "validation": "[0-9]+"
         }
     }
 }
