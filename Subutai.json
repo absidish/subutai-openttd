@@ -109,7 +109,7 @@
             "description": "Server password",
             "type": "string",
             "default": "myserver",
-            "validation": "[a-zA-Z0-9]+"
+            "validation": "[a-zA-Z0-9]*"
         },
         "pauseOnJoin": {
             "description": "Pause game on player join?",
