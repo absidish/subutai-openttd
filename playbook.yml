@@ -44,7 +44,7 @@
     - name: Extract opengfx
       unarchive:
         src: /tmp/opengfx.zip
-        dest: /opt/openttd/openttd-1.8.0-linux-generic-amd64/dataset
+        dest: /opt/openttd/openttd-1.8.0-linux-generic-amd64/baseset
         remote_src: yes
     - name: Download opensfx
       get_url:
