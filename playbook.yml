@@ -51,6 +51,10 @@
         url: http://bundles.openttdcoop.org/opensfx/releases/opensfx-0.2.3.zip
         dest: /tmp/opensfx.zip
         mode: 0755
+    - name: Create openttd directory
+      file:
+        path: /root/.openttd
+        state: directory
     - name: Copy configuration
       template:
         src: files/openttd.cfg
