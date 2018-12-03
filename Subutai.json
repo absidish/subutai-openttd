@@ -33,7 +33,32 @@
     "ansible-configuration": {
         "source-url": "https://github.com/crioto/subutai-openttd/archive/master.zip",
         "ansible-playbook": "playbook.yml",
-        "extra-vars": [],
+        "extra-vars": [
+            {
+                "key": "gameServerName",
+                "value": "${gameServerName}"
+            },
+            {
+                "key": "advertise",
+                "value": "${advertise}"
+            },
+            {
+                "key": "gameServerPassword",
+                "value": "${gameServerPassword}"
+            },
+            {
+                "key": "pauseOnJoin",
+                "value": "${pauseOnJoin}"
+            },
+            {
+                "key": "mapSizeX",
+                "value": "${mapSizeX}"
+            },
+            {
+                "key": "mapSizeY",
+                "value": "${mapSizeY}"
+            }
+        ],
         "groups": [
             {
                 "name": "openttd",
