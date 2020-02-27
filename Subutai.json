@@ -31,7 +31,7 @@
         }
     ],
     "ansible-configuration": {
-        "source-url": "https://github.com/crioto/subutai-openttd/archive/master.zip",
+        "source-url": "https://github.com/absidish/subutai-openttd/archive/master.zip",
         "ansible-playbook": "playbook.yml",
         "extra-vars": [
             {
