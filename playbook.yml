@@ -38,7 +38,7 @@
         mode: 0755
     - name: Download opengfx
       get_url:
-        url: http://bundles.openttdcoop.org/opengfx/releases/0.5.4/opengfx-0.5.4.zip
+        url: https://ipfs.subutai.io/ipfs/QmcfJN19Jdjbhzqsmvx15mCcKssb7YZThz2VN5G4WUQr7g/opengfx-0.5.4.zip
         dest: /tmp/opengfx.zip
         mode: 0755
     - name: Extract opengfx
